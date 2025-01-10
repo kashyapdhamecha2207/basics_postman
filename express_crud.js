@@ -1,11 +1,11 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
-const cors = require('cors');
+// const cors = require('cors');
 const app = express();
 const port = 3000;
 
 // MongoDB connection details
-const uri = "mongodb://127.0.0.1:27017"; 
+const uri  = "mongodb+srv://Test:Kashyap99@cluster0.vwkop.mongodb.net/"
 const dbName = "codinggita";
 
 // Middleware
@@ -13,7 +13,7 @@ app.use(express.json());
 
 let db, students;
 
-// Connect to MongoDB and initialize collections
+// Connect to MongoDB and initialize collections    
 async function initializeDatabase() {
     try {
         const client = await MongoClient.connect(uri, { useUnifiedTopology: true });
