@@ -1,6 +1,6 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
-// const cors = require('cors');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 
@@ -36,7 +36,7 @@ async function initializeDatabase() {
 initializeDatabase();
 
 // Routes
-
+app.use(cors());
 // GET: List all students
 app.get('/students', async (req, res) => {
     try {
